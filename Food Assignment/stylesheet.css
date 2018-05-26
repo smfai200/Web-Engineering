@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Londrina+Shadow');
+
+body{
+	background-image: url(bg.jpg);
+	background-repeat:no-repeat;
+	height:100%;
+	color:white;
+}
+
+h2{
+	font-size:30px;
+	font-family:Londrina Shadow;
+}
+.menu{
+	padding: 30px 60px 0px 100px;
+	overflow:hidden;
+}
+.menu1{
+	float:left;
+}
+
+.menu1 h2{
+	display:inline;
+}
+.menu1 img{
+	width:150px;
+	height:140px;
+	transform: rotate(-10deg);
+}
+
+.menu2{
+	float:right;
+	padding: 15px 20px 0px 0px;
+}
+
+.menu2 img{
+	width:190px;
+	height:80px;
+	transform: rotate(10deg);
+}
+
+.menu2 h2{
+	display:inline;
+}
+
+.favmenu{
+	padding: 5px 0px 0px 450px;
+}
+
+.favmenu h1{
+	font-size:35px;
+	font-family:Londrina Shadow;
+	display:inline;
+	padding-right:25px;
+}
+
+.result{
+	background-color:#383735;
+	font-size:50px;
+	font-family:Londrina Shadow;
+	color:white;
+}
+.result table{
+	font-size:50px;
+	font-family:Londrina Shadow;
+	color:white;
+}
+
+.result td,th{
+	padding:15px 15px 15px 15px;
+}
+
+.btn {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 24px 53px;
+  border: 2px solid #36484f;
+  font: normal 29px/normal "Times New Roman", Times, serif;
+  color: rgba(0,0,0,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(118,175,237,0.9);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  text-shadow: 0 0 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}

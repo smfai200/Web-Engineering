@@ -1,0 +1,157 @@
+<html>
+<head>
+	<title>FOOD MENU</title>
+	<link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <script>
+            function btnopt(value){
+                return ("<tr><td>Total Amount:</td> <td><input type='text' class='form' id='ans' value='"+ value + "' readonly></td><td>"+
+                      "<button type='submit' name='submit' class='btn' onClick='#'>Submit</button></td></tr>");
+            }
+			
+			function clear(){
+				var list = document.getElementById("list");
+				list.innerHTML = "&nbsp";
+			}
+			var foodarr = [];
+			var pricearr = [];
+			var quantity = [];
+			var total = 0;
+			var count=0;
+            var displaystr="<th>FOOD</th><th>QUANTITY</th><th>PRICE</th>";
+
+            function myfun()
+            {
+				clear();
+                var list = document.getElementById("list");
+				var item = document.getElementsByName("chk");
+				var price = document.getElementsByName("cost");
+				var quan = document.getElementsByName("quantity");
+                var ans = document.getElementById("ans");
+                var anshw = document.getElementById("ansshow");
+
+				for (var i=0; i<item.length; i++) {
+					if (item[i].checked) {
+						foodarr[count] = item[i].value;
+						pricearr[count] = Number(price[i].textContent);
+						quantity[count] = Number(quan[i].value);
+						
+					  if(quantity[count]%1 == 0){
+                        
+                        displaystr += "<tr>"+
+                        "<td> "+ foodarr[count] + "</td>";
+
+						if(quantity[count] < 0){
+							alert("QUANTITY CANT BE NEGATIVE");
+						}else if(quantity[count] == 0){
+							total += pricearr[count];
+                            displaystr += "<td> 1 </td>" + "<td>" + (pricearr[count]) + "</td>";
+						}else{
+							total += (pricearr[count]*quantity[count]);
+                            displaystr += "<td>" + quantity[count] + "</td>" + "<td>" + (pricearr[count]*quantity[count]) + "</td>";
+						}
+                        displaystr += "</tr>"
+						count = count+1;
+						}else{
+							alert("Invalid Quantity for "+foodarr[count]);
+						}
+					}
+				}
+                displaystr += btnopt(total);
+                list.innerHTML = displaystr;
+                anshw.style.visibility = "visible";
+				ans.value = total;
+				total = 0;
+				count = 0;
+				foodarr = [];
+				pricearr = [];
+            }
+
+            
+         </script>
+		 
+	<div class="menu">
+		<div class="menu1">
+			<img src="ff.jpg"></br><br/>
+			<input type="checkbox" id="food" name="chk" value="BURGER">
+			<h2>BURGER &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="80" id="cost" name="cost" style="display:inline;">80</p> &nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="SHAWARMA">
+			<h2>SHAWARMA &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="110" id="cost" name="cost" style="display:inline;">110</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="PIZZA">
+			<h2>PIZZA &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="750" id="cost" name="cost" style="display:inline;">750</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="CHICKEN ROLL">
+			<h2>CHICKEN ROLL &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="70" id="cost" name="cost" style="display:inline;">70</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="CHANNA CHAT">
+			<h2>CHANNA CHAT &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="50" id="cost" name="cost" style="display:inline;">50</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="OMLETTE">
+			<h2>OMLETTE &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="35" id="cost" name="cost" style="display:inline;">35</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+		</div>
+	
+		<div class="menu2">
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="menu.jpg"><br/><br/>
+			<h2>DRINK &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PRICE &nbsp&nbsp QUANTITY</h2><br>
+			<input type="checkbox" id="food" name="chk" value="COKE">
+			<h2>COKE  &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="90" id="cost" name="cost" style="display:inline;">90</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="SPRITE">
+			<h2>SPRITE  &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="90" id="cost" name="cost" style="display:inline;">90</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="7-UP">
+			<h2>7-UP  &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="90" id="cost" name="cost" style="display:inline;">90</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="PEPSI">
+			<h2>PEPSI  &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="90" id="cost" name="cost" style="display:inline;">90</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="TEA">
+			<h2>TEA  &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="25" id="cost" name="cost" style="display:inline;">25</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+			<br/>
+			<input type="checkbox" id="food" name="chk" value="COFFEE">
+			<h2>COFFEE  &nbsp&nbsp&nbsp&nbsp&nbsp Rs.<p value="150" id="cost" name="cost" style="display:inline;">150</p>&nbsp&nbsp&nbsp&nbsp
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h2> 
+		</div>
+	</div>
+	
+	<div class="favmenu"><br/><br/><br/>
+		<h1>1 ONE COLD DRINK </h1> <br/>
+		<h1>1 ZINGER BURGER</h1> <br/>
+		<h1>1 CHANNA CHAT</h1><br/>
+
+		<input type="checkbox" id="food" name="chk" value="FAVOURITE DEAL" style="width:30px;height:25px">
+		<h1>SELECT THIS DEAL &nbsp Rs.<p value="350" id="cost" name="cost" style="display:inline;">350</p>
+			<input type="Number" id="food" name="quantity" style="width:50px;height:30px;"> </h1>
+		<br/><br/>
+	</div>
+	
+	<div class="result" align="center">
+	<br>
+		<button type="submit" name="submit" class="btn" onClick="myfun()" style="font-size:30px;"> CALCULATE</button>
+            <br><br>
+
+            
+            <table class="tab2" id="list" border="3px">
+                
+               
+            </table>
+		
+	</div>
+</body>
+</html>
