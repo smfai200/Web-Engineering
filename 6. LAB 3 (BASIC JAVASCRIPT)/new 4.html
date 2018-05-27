@@ -1,0 +1,31 @@
+<html>
+<head>
+<!-- COMMENT -->
+<script>
+	num1 = prompt("Enter Number 1: ");
+	num2 = prompt("Enter Number 2: ");
+	for(var i = num1; i <= num2; i++){
+		//console.log("TEST: " + i + " ");
+		numsp1 = (i/100) | 0; // | is pipe, turns 1.6343 to 1.0 
+		numsp2 = (i%100)/10 | 0;
+		numsp3 = (i%10) | 0;
+	//	numsp1 = (num1/10) | 0;
+	//	numsp2 = (num1%10) | 0;
+		console.log(numsp1 + "\n ");
+		console.log(numsp2 + "\n ");
+		console.log(numsp3 + "\n ");
+		ans = (numsp1*numsp1*numsp1)+(numsp2*numsp2*numsp2)+(numsp3*numsp3*numsp3);
+		//console.log(ans + "\n ");
+		if (i == ans){
+			document.write("ARMSTRONG: " + i + "<br>");
+		}else{
+			document.write("NOT ARMSTRONG: " + i + "<br>");
+		}
+	}
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

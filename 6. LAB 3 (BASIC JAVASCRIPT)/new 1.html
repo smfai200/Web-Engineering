@@ -1,0 +1,30 @@
+<html>
+<head>
+
+<script>
+	function sum(arr){
+    var sum = 0;
+    for(var i=0; i< arr.length; i++){
+        sum = sum+arr[i];
+    }
+	document.write(sum);
+    //console.log(sum);
+	}
+</script>
+<script>
+	function mul(arr){
+		var sum = 1;
+		for(var i=0; i< arr.length; i++){
+			sum = sum * arr[i];
+		}
+		document.write(sum);
+		//console.log(sum);
+	}
+</script>
+
+</head>
+<body>
+	<Button onclick="sum([2,4,6,7])" style="padding: 10 10 10 10;">TEST SUM</Button>
+	<Button onclick="mul([2,4,6])" style="padding: 10 10 10 10;">TEST MUL</Button>
+</body>
+</html>

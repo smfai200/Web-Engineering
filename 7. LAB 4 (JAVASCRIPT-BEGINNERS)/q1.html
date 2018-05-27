@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>LOGIN VALIDATION</title>
+</head>
+
+<body>
+	<script>
+	function validate(){
+		var user = document.getElementById('username').value;
+		var pass = document.getElementById('password').value;
+		console.log(user);
+		console.log(pass);
+	 if(user === " "){
+		var result = document.getElementById('emptyerror');
+		result.style.visibility = "none";
+	 }else if(pass === " "){
+		var result = document.getElementById('emptyerror');
+		result.style.visibility = "none";
+	 }
+		if(user === "syedfaizan"){
+			if(pass === "faizan"){
+				console.log("ACCEPTED");
+				var result = document.getElementById('welcome');
+				result.style.visibility = "none";
+			}else{
+				console.log("Error");
+				var result = document.getElementById('error');
+				result.style.visibility = "none";
+			}
+		}else{
+			console.log("ERROR 1");
+			var result = document.getElementById('error');
+			result.style.visibility = "none";
+		}
+	}
+	</script>
+	
+	<form>
+		&nbsp &nbsp Username: <input type="text" placeholder="Username" id="username"/><br><br>
+		&nbsp &nbsp Password: &nbsp <input type="text" placeholder="Password" id="password"/> <br> <br>
+		&nbsp&nbsp&nbsp <button type="button" onclick="validate()"> CHECK USER AND PASSWORD </button>
+		<h1 style="visibility:hidden" id="welcome"> Welcome to the world of Java Script </h1>
+		<h1 style="visibility:hidden" id="emptyerror"> You need to Fill Both Fields</h1>
+		<h1 style="visibility:hidden" id="error"> Incorrect Username or Password </h1>
+	</form>
+
+</body>
+</html>

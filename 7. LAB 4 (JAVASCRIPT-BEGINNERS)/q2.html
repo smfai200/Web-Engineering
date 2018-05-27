@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>QUESTION 2</title>
+</head>
+
+<body>
+	<script>
+	function calculate(){
+		var uservalue = document.getElementById('uservalue').value;
+		console.log(uservalue);
+		if(uservalue > 30 || uservalue < 1){
+			console.log("INVALID INPUT");
+		}else{
+			var result = document.getElementById('result');
+			if(uservalue>=1 && uservalue <10){
+				result.value = (uservalue*300);
+			}else if(uservalue>=10 && uservalue <20){
+				result.value = (uservalue*200);
+			}else if(uservalue>=20 && uservalue <=30){
+				result.value = (uservalue*100);
+			}
+		}
+	}
+	</script>
+	
+	<table border=5px>
+		<tr>
+			<td>
+				Range From 1....10
+			</td>
+			<td>
+				$300
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Range From 10....20
+			</td>
+			<td>
+				$200
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Range From 20....30
+			</td>
+			<td>
+				$100
+			</td>
+		</tr>
+	</table>
+	<br>
+	
+	Units: 
+	<input type="text" style="width:50px" id="uservalue"/> 
+	<button type="button" onclick="calculate()">ENTER</button><br><br>
+	RESULT: <input type="text" id="result"/>
+
+</body>
+</html>

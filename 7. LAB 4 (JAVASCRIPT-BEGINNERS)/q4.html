@@ -1,0 +1,38 @@
+<html>
+<head>
+
+<script>
+	var arr = [];
+	var i = 0;
+	function useradd(){
+		var tag = document.getElementById('add');
+		var value = tag.value;
+		arr[i] = value;
+		i = i+1;
+		tag.value = "";
+	}
+	
+	function userdisplay(){
+		var response = document.getElementById('response');
+		var j = 0;
+		for(j=0; j<arr.length; j++){
+			console.log(arr[j]);
+			response.innerHTML = response.innerHTML +"Element "+ j +"=" + arr[j] +"<br>";
+		}
+	}
+</script>
+
+</head>
+<body>
+	Sample Screen: <br>
+	
+	&nbsp &nbsp &nbsp &nbsp <input type="text" id="add">
+	<Button onclick="useradd()" style="padding: 10 10 10 10;">ADD</Button>
+	<Button onclick="userdisplay()" style="padding: 10 10 10 10;">DISPLAY</Button><br><br>
+	<div id="response">
+	
+	</div>
+	
+	
+</body>
+</html>

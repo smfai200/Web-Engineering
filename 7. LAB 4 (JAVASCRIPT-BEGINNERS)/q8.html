@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<script>
+	var arr = [];
+	var index = 0;
+	var bounds = ["a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y"];
+	
+	function useradd(){
+		var flag = 0;
+		var tag = document.getElementById('add');
+		var value = tag.value.toString();
+		
+		for(var i=0; i<bounds.length; i++){
+			if(value === bounds[i]){
+				arr[index] = value;
+				console.log(value);
+				flag = 1;
+				index = index+1;
+			}
+		}
+		if(flag == 0){
+			console.log("OUT OF BOUND");
+		}
+		tag.value = "";
+	}
+	
+	function userdisplay(){
+		var response = document.getElementById('response');
+		var j = 0;
+		for(j=0; j<arr.length; j++){
+			console.log(arr[j]);
+			response.innerHTML = response.innerHTML +"Element "+ j +"=" + arr[j] +"<br>";
+		}
+	}
+</script>
+
+</head>
+<body>
+	&nbsp &nbsp &nbsp &nbsp Enter Number or Character: <input type="text" id="add">
+	<Button onclick="useradd()" style="padding: 10 10 10 10;">ADD</Button>
+	<Button onclick="userdisplay()" style="padding: 10 10 10 10;">DISPLAY</Button><br><br>
+	<hr>
+	<div id="response">
+		
+	</div>
+	
+	
+</body>
+</html>

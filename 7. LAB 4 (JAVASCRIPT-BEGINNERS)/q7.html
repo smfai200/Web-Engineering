@@ -1,0 +1,87 @@
+<html>
+<head>
+
+<script>
+
+	var arr = [];
+	var i = 0;
+	function useradd(){
+		var tag = document.getElementById('add');
+		var value = tag.value;
+		arr[i] = value;
+		i = i+1;
+		tag.value = "";
+	}
+	
+	function userdisplay(){
+		var response = document.getElementById('response');
+		var j = 0;
+		for(j=0; j<arr.length; j++){
+			console.log(arr[j]);
+			response.innerHTML = response.innerHTML +"Element "+ j +"=" + arr[j] +"<br>";
+		}
+	}
+	
+	function largest(){
+		var response = document.getElementById('response');
+		var nthitem = document.getElementById('nth').value;
+		var result = nthlargest(arr, nthitem)
+		response.innerHTML = nthitem + " Largest in Array is: " + result;
+	}
+	
+	function nthlargest(arra,highest){
+			var x = 0,
+				y = 0,
+				z = 0,
+				temp = 0,
+				flag = false, 
+				result = false; 
+   
+			while(x < arra.length){
+				y = x + 1; 
+				
+				if(y < arra.length){
+					for(z = y; z < arra.length; z++){
+						
+						if(arra[x] < arra[z]){
+							temp = arra[z];
+							arra[z] = arra[x];
+							arra[x] = temp;
+							flag = true; 
+						}else{
+							continue;
+						}	
+					}					
+				}
+				
+				if(flag){
+					flag = false;
+				}else{
+					x++; 
+					if(x === highest){ 
+                      
+						result = true;
+					}	
+				}
+				if(result){
+					break;
+				}
+			}
+			return (arra[(highest - 1)]);	
+		}
+</script>
+
+</head>
+<body>
+	&nbsp &nbsp &nbsp &nbsp Enter Number To be Added to Array: <input type="text" id="add"> <br><br>
+	&nbsp &nbsp &nbsp &nbsp Enter Nth Item to find Largest: <input type="text" id="nth"> <br>
+	<Button onclick="useradd()" style="padding: 10 10 10 10;">ADD</Button>
+	<Button onclick="userdisplay()" style="padding: 10 10 10 10;">DISPLAY</Button><br><br>
+	<Button onclick="largest()" style="padding: 10 10 10 10;">FIND THE LARGEST</Button><br><br>
+	<div id="response">
+	
+	</div>
+	
+	
+</body>
+</html>

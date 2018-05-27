@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+	function volumecalculate(){
+		var value = Number(document.getElementById('radius').value);
+		var result = document.getElementById('volume');
+		var volume = (4/3)*(3.14)*((value*value*value));
+		console.log(volume);
+		result.value = volume;
+	}
+	
+</script>
+
+</head>
+<body>
+	<br>
+	&nbsp &nbsp &nbsp &nbsp RADIUS: &nbsp <input type="text" id="radius"> <br><br>
+	&nbsp &nbsp &nbsp &nbsp VOLUME: <input type="text" id="volume"><br><br>
+	&nbsp &nbsp &nbsp &nbsp <Button onclick="volumecalculate()" style="padding: 10 10 10 10;">Calculate</Button>
+</body>
+</html>

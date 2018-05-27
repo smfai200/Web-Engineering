@@ -1,0 +1,81 @@
+.menu{
+	background-color:#87bdd8;
+	margin-top:140px;
+	padding-top:7px;
+	padding-bottom:7px;
+	width:1350;
+}
+
+.menu button{
+	margin-left:10px;
+	color:Black;
+	background-color:#87bdd8;
+}
+
+.heading {
+	float:left;
+	margin-left:15px;
+	padding-top:20px;
+}
+
+.submitf {
+	float:right;
+}
+
+.container{
+	padding-left:0px;
+	background-color:#b7d7e8;
+	width:1350;
+}
+
+.form-group{
+	float:left;
+	width:200px;
+	height: 0;
+}
+
+.search{
+	margin-top:50px;
+	margin-right:50px;
+	float:right;
+}
+
+.rows h5{
+	padding-left:45px;
+}
+
+
+.blog{
+	overflow:hidden;
+	background-color:#fbefcc;
+	
+}
+
+.blog h4{
+	border-bottom: 1px solid Black;
+	padding: 10px 0 5px 5px; 
+}
+
+.blogd{
+	float:left;
+	padding-left:20px;
+}
+
+.blogd h1{
+	border-bottom: 1px solid Black;
+	padding: 10px 0 5px 5px; 
+}
+
+.blogd p{
+	float:left;
+	width:980px;
+}
+
+.sidebar{
+	float:right;
+	padding-right:80px;
+}
+
+.sidebar-data{
+	
+}

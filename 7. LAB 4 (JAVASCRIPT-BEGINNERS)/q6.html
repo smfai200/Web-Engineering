@@ -1,0 +1,55 @@
+<html>
+<head>
+
+<script>
+	var capitalarr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+	var smallarr = ['a','b','c','d','e','f','g','g','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	var result = [];
+	
+	function swap(){
+		var userinput = document.getElementById('userinput').value;
+		for(var k=0; k<userinput.length; k++){
+			var flag = 0;
+			for(var i=0; i<capitalarr.length; i++){
+				if(userinput[k] === capitalarr[i]){
+					result[k] = smallarr[i];
+					flag = 1;
+					break;
+				}
+			}
+		  if(flag === 0){
+			for(var j=0; j<smallarr.length; j++){
+				if(userinput[k] === smallarr[j]){
+					result[k] = capitalarr[j];
+					break;
+				}
+			  }
+			}
+			
+		}
+		console.log(result);
+		print();
+	}
+	
+	function print(){
+		var response = document.getElementById('response');
+		response.innerHTML = "";
+		for(var i=0; i<result.length; i++){
+			response.innerHTML = response.innerHTML + result[i];
+		}
+		result = [];
+	}
+</script>
+
+</head>
+<body>
+	&nbsp &nbsp &nbsp &nbsp Enter a String: <input type="text" id="userinput">
+	<Button onclick="swap()" style="padding: 10 10 10 10;">SWAP</Button>
+	<hr>
+	<div id="response">
+		
+	</div>
+	
+	
+</body>
+</html>

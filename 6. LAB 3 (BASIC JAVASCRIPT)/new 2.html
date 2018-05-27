@@ -1,0 +1,31 @@
+<html>
+<head>
+
+<script>
+function repeat(){
+	var x = [3,'a',4,3,1,2,'a','a',2,3,1,'a','a',8,5,'a','a'];
+	var count = 0;
+	var count1 = 0;
+	var mostrepeated;
+	for(var i=0; i<x.length; i++){
+		for(var j=i+1; j<x.length; j++){
+			if(x[i] == x[j]){
+				count = count + 1;
+			}
+		}
+		if(count > count1){
+			count1 = count;
+			mostrepeated = x[i];
+		}
+		count = 0;
+	}
+	
+	document.write("MOST REPEATED: " + mostrepeated + ". Number of Repeation: " + count1);
+}
+</script>
+
+</head>
+<body>
+	<Button onclick="repeat()" style="padding: 10 10 10 10;">TEST SUM</Button>
+</body>
+</html>

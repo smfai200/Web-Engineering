@@ -1,0 +1,42 @@
+.login
+{
+
+border-style: 2px solid;
+background-color:white;
+height:250;
+width:250;
+font-weight:bold;
+	
+}
+.name_email
+{
+	background-color:#E2DED2;
+	margin:5;
+	height:150;
+	
+}
+
+.about
+{
+
+text-align:center;	
+border-style:solid;
+border-color:white;
+border-width: 10px;
+height:660;
+margin-left:250;
+	
+	
+}
+
+.end
+{
+	
+	background:rgba(0,0,0,.5);
+	width:350;
+	height:50;
+	color:white;
+	margin-left:300;
+	
+}
+
