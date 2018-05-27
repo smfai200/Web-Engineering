@@ -1,0 +1,59 @@
+<html>
+<head>
+
+</head>
+<body>
+	<script>
+		function myself(){
+			var Prime = "";
+			var Composite = "";
+			var userinput = document.getElementById("numuser").value;
+			var checkb = document.getElementsByName("check");
+			//console.log(userinput);
+			var flag = false;
+			for(var i=2; i<userinput; i++){
+				flag = false;
+				for(var j=2; j<i; j++){
+					if(i%j==0){
+						flag = true;
+						Composite += i + " ";
+						//console.log("COMPOSITE: " + Composite);
+						break;
+					}
+				}
+				
+				if(!flag){
+					Prime += i + " ";
+					//console.log("Prime: " + Prime);
+				}
+			}
+			
+			var Primebox = document.getElementById("Prime");
+			var Compositebox = document.getElementById("composite");
+			
+			if(checkb[0].checked && checkb[1].checked){
+				Primebox.value = Prime;
+				Compositebox.value = Composite;
+			}
+			else if(checkb[0].checked){
+				Primebox.value = Prime;
+			}else if(checkb[1].checked){
+				Compositebox.value = Composite;
+			}else{
+				alert("YOU NEED TO CHECK ONE!");
+			}
+		}
+	</script>
+	
+	<form>
+	Enter a Number: <input type="text" id="numuser" name="numus1"><br/>
+	Prime Numbers: <input type="text" id="Prime" name="ans1"><br/>
+	Composite Numbers: <input type="text" id="composite" name="ans1"><br/>
+	<input type="Checkbox" name="check"/>Show Prime Number <br/>
+	<input type="Checkbox" name="check"/>Show Composite Number <br/>
+	<br/>
+	
+	<button type="button" onclick="myself()" > CALL ME </button>
+	</form>
+</body>
+</html>
